@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CertIcon from '../components/CertIcon.astro';
 import { resume, YEARS, certifications } from '../data/resume';
 import { site } from '../config/site';
 ---
@@ -37,9 +38,12 @@ import { site } from '../config/site';
         <ul class="cert-list">
           {certifications.map((c) => (
             <li>
-              <div>
+              <div class="cert-main">
+                <span class="cert-badge"><CertIcon size={20} /></span>
+                <div>
                 <h3 class="job-role">{c.verifyUrl ? <a href={c.verifyUrl}>{c.name}</a> : c.name}</h3>
                 <p class="muted detail">Course certificate · {c.issuer}</p>
+                </div>
               </div>
               <span class="meta">{c.date}</span>
             </li>
@@ -96,8 +100,10 @@ import { site } from '../config/site';
   .edu { margin: 8px 0 0; }
   .section-gap { margin-top: 56px; }
   .cert-list { list-style: none; margin: 0; padding: 0; }
-  .cert-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; border-top: 1px solid var(--border); padding: 22px 0; }
+  .cert-list li { display: flex; padding-left: 0; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; border-top: 1px solid var(--border); padding: 22px 0; }
   .cert-list .job-role { font-size: 20px; }
+  .cert-main { display: flex; gap: 14px; align-items: flex-start; }
+  .cert-badge { width: 40px; height: 40px; flex: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; background: var(--raised); border: 1px solid var(--border); }
   @media (max-width: 860px) {
     .layout { grid-template-columns: 1fr; gap: 24px; }
     .head { padding: 56px 0 40px; }
