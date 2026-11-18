@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://darius.build/sitemap-index.xml

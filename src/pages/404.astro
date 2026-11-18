@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Not found">
+  <section class="container nf">
+    <p class="label">404</p>
+    <h1 class="h1">This page isn't built yet.</h1>
+    <p class="lede">The site is a work in progress. Try the homepage or the resume.</p>
+    <div class="row">
+      <a href="/" class="btn btn-ink">Home</a>
+      <a href="/resume" class="btn btn-ghost">Resume</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { display: flex; flex-direction: column; gap: 24px; padding-top: 120px; padding-bottom: 160px; }
+</style>

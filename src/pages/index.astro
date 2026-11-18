@@ -1,0 +1,195 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+import { YEARS, experienceStrip, caseStudies, glance } from '../data/resume';
+const resumeHref = site.resumePdf || '/resume';
+---
+<Base>
+  <section class="container hero">
+    <div class="hero-copy">
+      <p class="label">Senior software engineer · AI agents · {site.location}</p>
+      <h1 class="h1">I build AI agents that do real work.</h1>
+      <p class="lede">
+        {YEARS} years shipping Angular and TypeScript for enterprise and federal teams. Now I run Claude agent
+        workflows across the whole development lifecycle, and help engineering teams do the same.
+      </p>
+      <div class="row">
+        <a href={resumeHref} class="btn btn-ink">{site.resumePdf ? 'Download resume (PDF)' : 'View resume'}</a>
+        <a href="#work" class="btn btn-ghost">See case studies</a>
+      </div>
+      <p class="meta open">Open to senior and staff IC roles in frontend and AI engineering.</p>
+    </div>
+    <div class="terminal" role="img" aria-label="Terminal showing a Claude agent team completing tasks">
+      <div class="term-bar">
+        <span></span><span></span><span></span>
+        <em>agent-team — run</em>
+      </div>
+      <div class="term-body">
+        <div><b class="ok">❯</b> launch-team --project client-intake</div>
+        <div><i>planner</i>   scoped 6 tasks</div>
+        <div><i>builder</i>   wrote intake-form.component.ts</div>
+        <div><i>reviewer</i>  2 fixes applied</div>
+        <div><i>qa</i>        all checks passed</div>
+        <div><b class="ok">✓</b> <strong>shipped to staging</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" aria-label="Experience">
+    <div class="container strip-inner">
+      <p class="meta strip-label">EXPERIENCE ACROSS</p>
+      <ul>
+        {experienceStrip.map((name) => <li>{name}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" class="container section">
+    <p class="label">Selected work</p>
+    <h2 class="h2 sec-title">Three projects, problem to result.</h2>
+    <div class="cases">
+      {caseStudies.map((c) => (
+        <article class="card case">
+          <div class="case-copy">
+            <span class="meta">{c.tag}</span>
+            <h3 class="h3">{c.title}</h3>
+            <p class="muted">{c.body}</p>
+            <span class="meta">Full write-up coming soon</span>
+          </div>
+          <div class="results">
+            {c.results.map((r) => (
+              <div class="result">
+                <span class="result-value">{r.value}</span>
+                <span class="muted">{r.label}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="hire" class="container hire-wrap">
+    <div class="card hire">
+      <div class="hire-copy">
+        <p class="label">For hiring teams</p>
+        <h2 class="h2 hire-title">The short version</h2>
+        <p class="muted">
+          A senior engineer who leads with frontend architecture and ships with AI. The full resume covers all four
+          roles, skills and education.
+        </p>
+        <div class="row">
+          <a href={resumeHref} class="btn btn-ink">{site.resumePdf ? 'Download PDF' : 'View full resume'}</a>
+          <a href={`mailto:${site.email}?subject=Role%20at%20`} class="btn btn-ghost">Email me</a>
+        </div>
+      </div>
+      <dl class="glance">
+        {glance.map((g) => (
+          <div>
+            <dt class="meta">{g.label}</dt>
+            <dd>
+              <strong>{g.value}</strong>
+              <span class="muted">{g.detail}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section id="soon" class="band">
+    <div class="container section">
+      <p class="label band-label">In the workshop</p>
+      <h2 class="h2 sec-title">More is shipping here soon.</h2>
+      <div class="soon-grid">
+        <div class="soon-card">
+          <span class="meta">For businesses · coming soon</span>
+          <h3 class="h3">AI automation, installed</h3>
+          <p>Fixed-scope builds for lead follow-up, intake and reporting.</p>
+        </div>
+        <div class="soon-card">
+          <span class="meta">For builders · coming soon</span>
+          <h3 class="h3">The Lab</h3>
+          <p>The agent kits, Claude skills and indicators I use myself.</p>
+        </div>
+        <div class="soon-card">
+          <span class="meta">Newsletter · coming soon</span>
+          <h3 class="h3">The AI Junkie</h3>
+          <p>
+            One real Claude workflow a week.
+            <a href={`mailto:${site.email}?subject=AI%20Junkie%20waitlist`}>Email me to join the list.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container section">
+    <div class="card cta">
+      <h2 class="h2">Hiring a senior frontend or AI engineer? Let's talk.</h2>
+      <p class="muted">I reply within one business day.</p>
+      <div class="row">
+        <a href={`mailto:${site.email}`} class="btn btn-accent">{site.email}</a>
+        <a href={resumeHref} class="btn btn-ghost">Resume</a>
+        <a href={site.social.linkedin} class="btn btn-ghost">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 56px; align-items: center; padding-top: 104px; padding-bottom: 96px; }
+  .hero-copy { display: flex; flex-direction: column; gap: 26px; }
+  .open { margin: 0; }
+  @media (max-width: 640px) { .hero { padding-top: 64px; padding-bottom: 64px; gap: 40px; } }
+
+  .terminal { background: #141518; border: 1px solid #2A2C31; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(18, 19, 16, 0.18); }
+  .term-bar { display: flex; gap: 8px; align-items: center; padding: 14px 18px; border-bottom: 1px solid #2A2C31; }
+  .term-bar span { width: 12px; height: 12px; border-radius: 50%; background: #3A3C42; }
+  .term-bar em { margin-left: 12px; font-style: normal; font-family: var(--font-mono); font-size: 12px; color: #8A8985; }
+  .term-body { padding: 24px 24px 28px; font-family: var(--font-mono); font-size: 14px; line-height: 2; color: #B4B3AE; white-space: pre; overflow-x: auto; }
+  .term-body i { font-style: normal; color: #7FB2FF; }
+  .term-body .ok { color: #FF6A47; font-weight: 400; }
+  .term-body strong { color: #F2F1EC; font-weight: 400; }
+
+  .strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--raised); }
+  .strip-inner { display: flex; gap: 24px 40px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-top: 30px; padding-bottom: 30px; }
+  .strip-label { margin: 0; letter-spacing: 0.08em; }
+  .strip ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px 36px; flex-wrap: wrap; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text-2); }
+
+  .sec-title { margin: 16px 0 48px; max-width: 760px; }
+  .cases { display: flex; flex-direction: column; gap: 24px; }
+  .case { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 40px; align-items: center; padding: 40px; }
+  .case-copy { display: flex; flex-direction: column; gap: 14px; }
+  .case-copy p { margin: 0; }
+  .results { display: flex; flex-direction: column; gap: 16px; padding: 28px; background: var(--raised); border-radius: 14px; }
+  .result { display: flex; flex-direction: column; gap: 2px; }
+  .result + .result { padding-top: 16px; border-top: 1px solid var(--border); }
+  .result-value { font-family: var(--font-display); font-weight: 600; font-size: 44px; line-height: 1.05; letter-spacing: -0.03em; color: var(--accent-text); }
+  @media (max-width: 640px) { .case { padding: 28px 22px; gap: 24px; } }
+
+  .hire-wrap { padding-bottom: 104px; }
+  .hire { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 48px; padding: 48px; }
+  .hire-copy { display: flex; flex-direction: column; gap: 16px; }
+  .hire-copy p { margin: 0; }
+  .hire-title { font-size: clamp(32px, 3.4vw, 40px); }
+  .glance { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; align-content: start; }
+  .glance > div { padding-top: 16px; border-top: 1px solid var(--border); }
+  .glance dd { margin: 6px 0 0; display: flex; flex-direction: column; gap: 2px; font-size: 16px; }
+  .glance dd .muted { font-size: 14px; }
+  @media (max-width: 640px) { .hire { padding: 28px 22px; } .glance { grid-template-columns: 1fr; } }
+
+  .band { background: var(--band); color: var(--band-text); }
+  .band-label { color: var(--band-label); }
+  .soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; }
+  .soon-card { display: flex; flex-direction: column; gap: 12px; padding: 32px; background: var(--band-card); border: 1px dashed var(--band-border); border-radius: var(--radius); }
+  .soon-card .meta { color: var(--band-text-2); }
+  .soon-card .h3 { font-size: 24px; }
+  .soon-card p { margin: 0; font-size: 15px; color: var(--band-text-2); }
+  .soon-card a { color: var(--band-text); }
+
+  .cta { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; padding: 72px 48px; border-radius: 28px; }
+  .cta p { margin: 0; font-size: 18px; }
+  .cta .h2 { max-width: 820px; }
+  @media (max-width: 640px) { .cta { padding: 40px 22px; } }
+</style>
