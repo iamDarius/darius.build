@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../config/site';
-import { YEARS, experienceStrip, caseStudies, glance } from '../data/resume';
+import { YEARS, experienceStrip, caseStudies, glance, certifications } from '../data/resume';
 const resumeHref = site.resumePdf || '/resume';
 ---
 <Base>
@@ -94,6 +94,17 @@ const resumeHref = site.resumePdf || '/resume';
           </div>
         ))}
       </dl>
+      <div class="certs">
+        <p class="meta">Certificates · Anthropic Academy</p>
+        <ul>
+          {certifications.map((c) => (
+            <li>
+              {c.verifyUrl ? <a href={c.verifyUrl}>{c.name}</a> : <span>{c.name}</span>}
+              <span class="meta">{c.date}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -169,6 +180,10 @@ const resumeHref = site.resumePdf || '/resume';
   @media (max-width: 640px) { .case { padding: 28px 22px; gap: 24px; } }
 
   .hire-wrap { padding-bottom: 104px; }
+  .certs { grid-column: 1 / -1; padding-top: 28px; border-top: 1px solid var(--border); }
+  .certs p { margin: 0 0 14px; }
+  .certs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .certs li { display: inline-flex; gap: 10px; align-items: baseline; padding: 8px 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-pill); font-size: 15px; font-weight: 500; }
   .hire { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 48px; padding: 48px; }
   .hire-copy { display: flex; flex-direction: column; gap: 16px; }
   .hire-copy p { margin: 0; }

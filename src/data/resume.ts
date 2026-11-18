@@ -100,3 +100,12 @@ export const glance = [
   { label: 'Core stack', value: 'Angular · TypeScript · RxJS', detail: '.NET, Amazon EKS' },
   { label: 'AI', value: 'Claude Code agent workflows', detail: 'Skills, subagents, agent testing' },
 ];
+
+// Anthropic Academy course certificates (completion certificates, not proctored exams).
+// Add each verify URL (verify.skilljar.com/c/...) from the Academy student profile.
+export const certifications = [
+  { name: 'Claude Code in Action', issuer: 'Anthropic Academy', date: 'Nov 2026', verifyUrl: '' },
+  { name: 'Introduction to Subagents', issuer: 'Anthropic Academy', date: 'Jul 2026', verifyUrl: '' },
+  { name: 'Claude Code 101', issuer: 'Anthropic Academy', date: 'Apr 2026', verifyUrl: '' },
+  { name: 'Claude 101', issuer: 'Anthropic Academy', date: 'Apr 2026', verifyUrl: '' },
+];
