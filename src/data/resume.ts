@@ -1,11 +1,11 @@
 // Public resume — source: "Agentic SWE Resume - Darius Moore" (Nov 2026).
 // Keep phone number, personal email, clearance details, program names and sponsors OFF the public site.
-// CoStar business figures (rep count, contract volume) are left out until Darius confirms they can be public.
+// CoStar business figures (1,200+ reps, $2B+ monthly contract volume) confirmed OK to show publicly (Nov 2026).
 
 export const YEARS = 12; // professional experience since Aug 2014
 
 export const resume = {
-  summary: `Senior software engineer with ${YEARS} years building enterprise and federal software, now specializing in AI and agentic workflows. I lead development of a financial enterprise platform for a national sales organization and run Claude Code across the full development lifecycle.`,
+  summary: `Senior software engineer with ${YEARS} years building enterprise and federal software, now specializing in AI and agentic workflows. I lead development of the sales platform 1,200+ CoStar reps use daily to generate $2B+ in contract volume every month, and I run Claude Code across the full development lifecycle.`,
   experience: [
     {
       role: 'Senior Software Engineer',
@@ -14,12 +14,12 @@ export const resume = {
       dates: 'Mar 2022 – Present',
       earlier: 'Software Engineer, Apr 2019 – Mar 2022',
       points: [
-        'Lead development of a financial enterprise platform (Angular 20 / .NET SPA) used daily by the company’s sales teams.',
+        'Lead development of a financial enterprise platform (Angular 20 / .NET SPA) used daily by 1,200+ sales reps to generate $2B+ in contract volume every month.',
         'Redesigned the core proposal workflow for the sales teams, cutting sales-cycle time for client transactions by 50%.',
         'Orchestrate agentic AI (Claude Code) across the full development lifecycle: custom skills that turn team standards into repeatable workflows, parallel subagents for research and scoped implementation, and agent-driven testing of application flows, improving my workflow efficiency by more than 40%.',
         'Scaled agentic development practices from my own workflow to the full team of 3 engineers: custom skills, review guardrails and shared agent config.',
         'Integrate AI agents into sprint planning and refinement: drafting user stories and acceptance criteria for QA, decomposing epics into subtasks, and surfacing requirement gaps before buildout begins.',
-        'Led the migration of the application from on-prem to Amazon EKS, and own CI/CD across Azure DevOps and Jenkins, moving deployments from IIS to containers.',
+        'Led the migration from on-prem IIS to containers on Amazon EKS, and now own CI/CD across Azure DevOps and Jenkins.',
         'Modernized the legacy Angular codebase through sequential major-version upgrades to Angular 20, adopting the new control-flow syntax and OnPush change detection.',
       ],
     },
@@ -35,7 +35,7 @@ export const resume = {
       ],
     },
     {
-      role: 'UI Designer / Front End Web Developer',
+      role: 'UI Designer / Frontend Web Developer',
       org: 'CGI Inc.',
       location: 'Washington, DC',
       dates: 'Oct 2015 – Sep 2017',
@@ -60,8 +60,8 @@ export const resume = {
   ],
   education: { school: 'Old Dominion University', degree: 'B.S., Information Systems' },
   skills: [
-    { group: 'Languages & frameworks', items: ['Angular 20', 'TypeScript', 'JavaScript (ES6)', 'RxJS', 'NgRx', 'Redux', '.NET 10', 'C#', 'SQL', 'REST APIs', 'HTML', 'CSS', 'Sass'] },
     { group: 'AI & agentic', items: ['Claude Code', 'Claude Cowork', 'Custom skills', 'Subagents', 'Copilot'] },
+    { group: 'Languages & frameworks', items: ['Angular 20', 'TypeScript', 'JavaScript (ES6)', 'RxJS', 'NgRx', 'Redux', '.NET 10', 'C#', 'SQL', 'REST APIs', 'HTML', 'CSS', 'Sass'] },
     { group: 'Cloud & DevOps', items: ['Amazon EKS', 'Azure DevOps / TFS', 'Jenkins', 'Git', 'Jira', 'Confluence'] },
     { group: 'Observability', items: ['OpenTelemetry', 'Jaeger', 'Datadog', 'LogRocket'] },
     { group: 'Frontend practice', items: ['Responsive design', 'Performance optimization', 'Storybook', 'Angular CLI', 'Chrome DevTools'] },
