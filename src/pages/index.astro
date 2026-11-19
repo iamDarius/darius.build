@@ -8,7 +8,7 @@ const resumeHref = site.resumePdf || '/resume';
 <Base>
   <section class="container hero">
     <div class="hero-copy">
-      <p class="label">Senior software engineer · AI agents · {site.location}</p>
+      <p class="label">Senior software engineer · AI agents</p>
       <h1 class="h1">I build AI agents that do real work.</h1>
       <p class="lede">
         {YEARS} years shipping Angular and TypeScript for enterprise and federal teams. Now I run Claude agent
@@ -144,7 +144,7 @@ const resumeHref = site.resumePdf || '/resume';
       <div class="row">
         <a href={`mailto:${site.email}`} class="btn btn-accent">{site.email}</a>
         <a href={resumeHref} class="btn btn-ghost">Resume</a>
-        <a href={site.social.linkedin} class="btn btn-ghost">LinkedIn</a>
+        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
       </div>
     </div>
   </section>
