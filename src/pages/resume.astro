@@ -11,12 +11,12 @@ import { site } from '../config/site';
   <div class="container">
     <header class="head">
       <p class="label">Resume</p>
-      <h1 class="h1 title">Senior software engineer. AI &amp; agentic workflows.</h1>
+      <h1 class="h1 title">AI-Native Senior Software Engineer</h1>
       <p class="lede">{resume.summary}</p>
       <div class="row">
         {site.resumePdf && <a href={site.resumePdf} class="btn btn-ink" download>Download resume (PDF)</a>}
         <a href={`mailto:${site.email}`} class="btn btn-accent">Email me</a>
-        <a href={site.social.linkedin} class="btn btn-ghost">LinkedIn</a>
+        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
       </div>
     </header>
 
