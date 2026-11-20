@@ -60,7 +60,7 @@ export const resume = {
   ],
   education: { school: 'Old Dominion University', degree: 'B.S., Information Systems' },
   skills: [
-    { group: 'AI & agentic', items: ['Claude Code', 'Claude Cowork', 'Custom skills', 'Subagents', 'Copilot'] },
+    { group: 'AI & agentic', items: ['Claude Code (skills, hooks, subagents)', 'MCP', 'Context engineering', 'Multi-agent orchestration', 'Agent-driven E2E testing', 'Claude API', 'Evals', 'GitHub Copilot'] },
     { group: 'Languages & frameworks', items: ['Angular 20', 'TypeScript', 'JavaScript (ES6)', 'RxJS', 'NgRx', 'Redux', '.NET 10', 'C#', 'SQL', 'REST APIs', 'HTML', 'CSS', 'Sass'] },
     { group: 'Cloud & DevOps', items: ['Amazon EKS', 'Azure DevOps / TFS', 'Jenkins', 'Git', 'Jira', 'Confluence'] },
     { group: 'Observability', items: ['OpenTelemetry', 'Jaeger', 'Datadog', 'LogRocket'] },
